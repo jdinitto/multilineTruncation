@@ -1,0 +1,29 @@
+.truncateThisText {
+
+/* required style declarations*/
+   background-color: #fff; /* if this is changed, the background gradient must, to match */
+   display: block;
+   height: 2.2em; /* this is good for 2 lines of text */
+   position: relative;
+
+/* these styles aren't needed, just for display purposes */
+    width: 200px; 
+    border: 1px solid;
+    margin-bottom: 1em;
+}
+
+.ellipsesForTruncation {
+  display: none;
+  text-align: right;
+  position: absolute;
+  padding: 0 1em;
+  background: -moz-linear-gradient(left,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 28%, rgba(255,255,255,1) 64%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 28%,rgba(255,255,255,1) 64%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 28%,rgba(255,255,255,1) 64%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+}
+
+.red {
+  border-color: #c00;
+  color: #c00;
+}
