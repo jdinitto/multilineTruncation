@@ -1,41 +1,48 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Multiline Truncation</title>
-  <link rel="stylesheet" type="text/css" href="css/styles.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="js/script.js"></script>
-  
-  <script>
-    document.addEventListener("DOMContentLoaded", function(event) { 
-      multilineTruncation();
-    });
-  </script>
 
-</head>
-<body>
-<a href="#" class="truncateThisText">Here's some Ray Bradbury: I was in the hospital only three long sad days when on a Sunday, sd sdsd s  sd with all the doctors mostly absent and the nurses off doing something no one knew, that the remarkable thing happened. He could hear the approach of the remarkable event moments before its arrivdsdhe explosions of laughter and the welcoming cries of patients far down the hall. At long last the remarkable event arrived in the door.</a>
-<a href="#" class="truncateThisText">Smaller amount of text so the innerscroll height isn't much bigger.</a>
-<a href="#" class="truncateThisText">No truncation.</a>
-<a href="#" class="truncateThisText red">Edge case: you'll see a big space here =( Reallylongwordthatcausesa3rdline</a>
-<p class="truncateThisText">
-  This here is a paragraph element to see if truncation works with it.
-</p>
-<p class="truncateThisText">
-  This here is a div element to see if truncation also works with it.
-</p>
-<p class="truncateThisText">
-  This here is a span element to see if truncation also works with it.
-</p>
-<ul>
-<li class="truncateThisText">
-  This here is a list element to see if truncation also works with it.
-</li>
-</ul>
-<table>
-<tr>
-  <td class="truncateThisText">This here is a table cell element to see if truncation also works with it.</td>
-</tr>
-</table>
-</body>
+  <head>
+    <script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/script.js"></script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+          multilineTruncation('.truncateThisText');
+        });
+    </script>
+  </head>
+
+  <body>
+    <p id="nonTruncation">Here is a paragraph element not acted upon by the trunction script.</p>
+    <a href="#" class="truncateThisText">Here's some Ray Bradbury: I was in the hospital only three long sad days when on a Sunday, sd sdsd s  sd with all the doctors mostly absent and the nurses off doing something no one knew, that the remarkable thing happened. He could hear the approach of the remarkable event moments before its arrivdsdhe explosions of laughter and the welcoming cries of patients far down the hall. At long last the remarkable event arrived in the door.</a>
+    <a href="#" class="truncateThisText">Smaller amount of text so the innerscroll height isn't much bigger.</a>
+    <a href="#" class="truncateThisText">No truncation.</a>
+    <a href="#" class="truncateThisText red">Edge case: you'll see a big space here =( Reallylongwordthatcausesa3rdline</a>
+    <p class="truncateThisText">
+    This here is a paragraph element to see if truncation works with it.
+  </p>
+    <p class="truncateThisText">
+    This here is a div element to see if truncation also works with it.
+  </p>
+    <p class="truncateThisText">
+    This here is a span element to see if truncation also works with it.
+  </p>
+    
+    <ul>
+      <li class="truncateThisText">
+    This here is a list element to see if truncation also works with it.
+  </li>
+    </ul>
+    
+    
+    <table>
+      <tbody>
+        <tr>
+          <td class="truncateThisText">This here is a table cell element to see if truncation also works with it.</td>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
 </html>
