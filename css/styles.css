@@ -1,4 +1,8 @@
-.truncateThisText {
+body, html {
+  font-family: helvetica, arial, "sans serif";
+}
+
+.truncateThisText, #nonTruncation {
 
 /* required style declarations*/
    background-color: #fff; /* if this is changed, the background gradient must, to match */
@@ -7,9 +11,13 @@
    position: relative;
 
 /* these styles aren't needed, just for display purposes */
-    width: 200px; 
+    width: 200px;
     border: 1px solid;
     margin-bottom: 1em;
+}
+
+#nonTruncation {
+    margin-bottom: 2em;
 }
 
 .ellipsesForTruncation {
