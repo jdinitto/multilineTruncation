@@ -1,5 +1,5 @@
-function multilineTruncation() {
-  $('.truncateThisText').each(function(i) {
+function multilineTruncation(el) {
+  $(el).each(function() {
     if (this.scrollHeight > $(this).innerHeight()) {
       var parentW = $(this).width(),
         parentH = $(this).height();
