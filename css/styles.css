@@ -35,3 +35,12 @@ body, html {
   border-color: #c00;
   color: #c00;
 }
+
+table {
+  -webkit-border-horizontal-spacing: 0;
+  -webkit-border-vertical-spacing: 0;
+}
+
+ul {
+  padding-left: 0;
+}

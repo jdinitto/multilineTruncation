@@ -1,36 +1,70 @@
-function multilineTruncation(el) {
+function multilineTruncation(el) { 
+    "use strict"
+
     $(el).each(function() {
         if (this.scrollHeight > $(this).innerHeight()) {
-            var parentW = $(this).width(),
-                parentH = $(this).height();
 
-            //create ellipse and append
-            var ellipseEl = document.createElement('span'),
-                ellipseTxt = document.createTextNode('\u2026');
+            //placeholder for ellipses
+            var e;
 
-            ellipseEl.className = 'ellipsesForTruncation';
-            ellipseEl.appendChild(ellipseTxt);
-            $(this).prepend(ellipseEl);
+            //get parent element dimensions
+            var parentSize = function(){
+              var parentW = $(this).width(),
+                  parentH = $(this).height();
+              return {
+                parentW: parentW,
+                parentH: parentH
+              }
+            },
 
-            var ell = $(this).find('.ellipsesForTruncation'),
-                ellW = ell.width(),
-                ellH = ell.height(),
-                ellPL = parseInt(ell.css('padding-left')),
-                ellPR = parseInt(ell.css('padding-right'));
+            //ellipse creation
+            createEllipse = function(){
+              var ellipseEl = document.createElement('span'),
+                  ellipseTxt = document.createTextNode('\u2026');
+              ellipseEl.className = 'ellipsesForTruncation';
+              ellipseEl.appendChild(ellipseTxt);
+              return ellipseEl;
+            },
 
-            //nudges ellipses down
-            var shim = 1; //chrome and IE
-            if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
-                shim = 3;
-            } //ff
+            getEllipses = function(){
+                return $(this).find('.ellipsesForTruncation');
+            },
 
-            $(this).css('overflow', 'hidden');
+            //get ellipses styles
+            getEllipseStyles = function(){
+              var ellW = ellipses.width(),
+                  ellH = ellipses.height(),
+                  ellPL = parseInt(ellipses.css('padding-left')),
+                  ellPR = parseInt(ellipses.css('padding-right'));
 
-            ell.css({
+                  return {
+                    ellW: ellW,
+                    ellH: ellH,
+                    ellPl: ellPl,
+                    ellPR: ellPR
+                  }
+            },
+
+            //get shim to nudge ellipse down
+            getShim = function(){
+              var shim = 1; //chrome and IE
+              if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
+                shim = 3;  //ff
+              }
+              return shim;
+            };
+
+            $(this).prepend(createEllipse()); //create and append ellipse
+            $(this).css('overflow', 'hidden'); //hide overflow
+
+            //get ellipses and set styles
+            e = getEllipses();
+            e.css({
                 'display': 'block',
-                'top': parentH - ellH + shim,
-                'left': parentW - ellW - ellPL - ellPR
+                'top': e.parentH - e.ellH + e.shim,
+                'left': e.parentW - e.ellW - e.ellPL - e.ellPR
             });
+
         } else {
             //eliminate whitespace if no truncation
             $(this).css('height', 'auto');
