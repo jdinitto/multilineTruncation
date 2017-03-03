@@ -4,8 +4,8 @@ function multilineTruncation(el) {
     $(el).each(function() {
         if (this.scrollHeight > $(this).innerHeight()) {
 
-            //placeholder for ellipses
-            var e;
+            //placeholder for parent element and ellipses
+            var p, e;
 
             //get parent element dimensions
             var parentSize = function(){
@@ -57,12 +57,13 @@ function multilineTruncation(el) {
             $(this).prepend(createEllipse()); //create and append ellipse
             $(this).css('overflow', 'hidden'); //hide overflow
 
-            //get ellipses and set styles
+            //get parents, ellipses, and set styles
+            p = getParentSize();
             e = getEllipses();
             e.css({
                 'display': 'block',
-                'top': e.parentH - e.ellH + e.shim,
-                'left': e.parentW - e.ellW - e.ellPL - e.ellPR
+                'top': p.parentH - e.ellH + e.shim,
+                'left': p.parentW - e.ellW - e.ellPL - e.ellPR
             });
 
         } else {
