@@ -40,7 +40,7 @@ function multilineTruncation(el) {
                   return {
                     ellW: ellW,
                     ellH: ellH,
-                    ellPl: ellPl,
+                    ellPL: ellPL,
                     ellPR: ellPR
                   }
             },
