@@ -2,15 +2,18 @@ function multilineTruncation(el) {
     "use strict"
 
     $(el).each(function() {
-        if (this.scrollHeight > $(this).innerHeight()) {
 
-            //placeholder for parent element and ellipses
-            var p, e;
+        var self = this;
+
+        if (self.scrollHeight > $(self).innerHeight()) {
+
+            //placeholders
+            var p, e, es, shim;
 
             //get parent element dimensions
-            var parentSize = function(){
-              var parentW = $(this).width(),
-                  parentH = $(this).height();
+            var getParentSize = function(){
+              var parentW = $(self).width(),
+                  parentH = $(self).height();
               return {
                 parentW: parentW,
                 parentH: parentH
@@ -26,16 +29,16 @@ function multilineTruncation(el) {
               return ellipseEl;
             },
 
-            getEllipses = function(){
-                return $(this).find('.ellipsesForTruncation');
-            },
+            /* getEllipses = function(){
+                return 
+            }, */
 
             //get ellipses styles
             getEllipseStyles = function(){
-              var ellW = ellipses.width(),
-                  ellH = ellipses.height(),
-                  ellPL = parseInt(ellipses.css('padding-left')),
-                  ellPR = parseInt(ellipses.css('padding-right'));
+              var ellW = e.width(),
+                  ellH = e.height(),
+                  ellPL = parseInt(e.css('padding-left')),
+                  ellPR = parseInt(e.css('padding-right'));
 
                   return {
                     ellW: ellW,
@@ -47,28 +50,30 @@ function multilineTruncation(el) {
 
             //get shim to nudge ellipse down
             getShim = function(){
-              var shim = 1; //chrome and IE
+              shim = 1; //chrome and IE
               if (navigator.userAgent.toLowerCase().indexOf('firefox') > -1) {
                 shim = 3;  //ff
               }
               return shim;
             };
 
-            $(this).prepend(createEllipse()); //create and append ellipse
-            $(this).css('overflow', 'hidden'); //hide overflow
+            $(self).prepend(createEllipse()); //create and append ellipse
+            $(self).css('overflow', 'hidden'); //hide overflow
 
             //get parents, ellipses, and set styles
             p = getParentSize();
-            e = getEllipses();
+            e = $(self).find('.ellipsesForTruncation');
+            es = getEllipseStyles();
+            shim = getShim();
             e.css({
                 'display': 'block',
-                'top': p.parentH - e.ellH + e.shim,
-                'left': p.parentW - e.ellW - e.ellPL - e.ellPR
+                'top': p.parentH - es.ellH + shim,
+                'left': p.parentW - es.ellW - es.ellPL
             });
 
         } else {
             //eliminate whitespace if no truncation
-            $(this).css('height', 'auto');
+            $(self).css('height', 'auto');
         }
     });
 };
