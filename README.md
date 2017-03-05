@@ -22,7 +22,7 @@ Reference the `multilineTruncation` function, passing in the `.truncateThisText`
 
 Check the [stylesheet here](https://github.com/jdinitto/multilineTruncation/blob/master/css/styles.css) for further comments on the CSS. To truncate more than two lines, you'd have to adjust some things there.
 
-[Check it out here.](https://jdinitto.github.io/multilineTruncation)
+[Check out the truncation in action here.](https://jdinitto.github.io/multilineTruncation)
 
 ## To Do/Ideas
 - [ ] Make the function not dependent on a specific CSS class to work, or only as another option
