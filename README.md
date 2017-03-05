@@ -1,5 +1,5 @@
 # multilineTruncation
-A method for truncating text with line wrapping, using jQuery. There's native CSS3 truncation for one line, but nothing for wrapped text. There are a number of solutions for this elsewhere; I mix and matched a lot of them into something I thought worked best.
+A method for truncating wrapped text, using jQuery. There's native CSS3 truncation for one line, but nothing for wrapped text. There are a number of solutions for this elsewhere; I mix and matched a lot of them into something I thought worked best.
 
 Works in Chromes, Firefoxes, and IE8 and up.
 
@@ -20,7 +20,7 @@ Reference the `multilineTruncation` function, passing in the `.truncateThisText`
 </script>
 ```
 
-Check the stylesheet for further comments on the CSS.
+Check the [stylesheet here](https://github.com/jdinitto/multilineTruncation/blob/master/css/styles.css) for further comments on the CSS. To truncate more than two lines, you'd have to adjust some things there.
 
 [Check it out here.](https://jdinitto.github.io/multilineTruncation)
 
