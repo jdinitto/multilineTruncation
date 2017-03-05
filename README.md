@@ -4,7 +4,7 @@ A method for truncating text with line wrapping, using jQuery. There's native CS
 Works in Chromes, Firefoxes, and IE8 and up.
 
 ## To Use
-Scripts and stylesheets to call. I call the latest jQuery version here, but as long as it's v1.6+, it should be fine. :
+Scripts and stylesheets to call. I call the latest jQuery version here, but as long as it's v1.6+, it should be fine:
 `<script data-require="jquery@2.2.4" data-semver="2.2.4" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>`
 `<link rel="stylesheet" href="css/styles.css" />`
 `<script src="js/script.js"></script>`
