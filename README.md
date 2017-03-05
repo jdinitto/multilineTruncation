@@ -25,5 +25,5 @@ Check the stylesheet for further comments on the CSS.
 ## To Do/Ideas
 - [ ] Make the function not dependent on a specific CSS class to work, or only as another option
 - [ ] Make truncation character and styles as paramters to pass in, so there's more options.
-- [ ] Figure out how to move ellipses to the edge of text (see edge case on [page](https://jdinitto.github.io/multilineTruncation)
+- [ ] Figure out how to move ellipses to the edge of text--see edge case on [page](https://jdinitto.github.io/multilineTruncation)
 - [ ] ECMA6-ify it?
